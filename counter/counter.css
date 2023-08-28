@@ -1,0 +1,56 @@
+/*css*/
+body{
+	text-align:center;
+}
+#mbox{
+	position:absolute;
+	background-color:rgba(30,30,30,0.2);
+	width:400px;
+	margin:0;
+	height:270px;
+	padding:0 5px;
+	text-align:center;
+	border:5px solid black;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	box-sizing:border-box;
+	border-radius:50px;
+}
+#dispp{
+	width:130px;
+	height:130px;
+	padding:20px;
+	background-color:rgba(230,230,230,0.9);
+	margin:10px 0 20px 0;
+	text-align:center;
+	top:50%;
+	left:50%
+	font-size:40px;
+	border-radius:50%;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+}
+#box1{
+	display:flex;
+	padding:5px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+#btn{
+	display:flex;
+	justify-content:space-around;
+	gap:10px;
+}
+button{
+	width:100px;
+	padding:5px 0;
+	box-sizing:border-box;
+}
+#incre:hover,#decre:hover,#resett:hover{
+	background-color:grey;
+	box-shadow:3px 3px 3px black;
+}
