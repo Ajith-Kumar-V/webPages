@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HTML form" />
+    <title>Form submission</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>Submit the form</h1>
+    <div id="content">
+        <form id="data-form" action="table.html" method="get" onsubmit="return false;">
+            <div id="name">
+                <label for="fname" id="fnlabel">First Name:
+                    <input id="fname" type="text" placeholder="First Name" required /></label>
+                <label for="lname" id="lnlabel">Last Name:
+                    <input id="lname" type="text" placeholder="Last Name" /></label>
+            </div>
+            <p>Your Gender:</p>
+            <div id="gender-field">
+                <label for="male">
+                    <input id="male" class="genders" type="radio" value="male" name="gender" required />
+                    male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" class="genders" name="gender" value="female" required />
+                    Female
+                </label>
+                <label for="notprefer">
+                    <input type="radio" id="notprefer" name="gender" class="genders" value="not-prefer" required />
+                    Not prefered to say
+                </label>
+            </div>
+            <p>Prefered Food type:</p>
+            <div id="food-field">
+                <div id="lbll1"><label for="veg"></label><input type="checkbox" id="veg" value="vegeterian"
+                        name="food-type" />
+                    Vegeterian</label></div>
+                <div id="lbll1"><label for="non-veg"></label><input type="checkbox" id="non-veg" value="non-vegeterian"
+                        name="food-type" />
+                    Non-Vegeterian</label></div>
+                <div id="lbll1"><label for="asian"></label><input type="checkbox" id="asian" name="food-type"
+                        value="asian" />
+                    Asian</label></div>
+                <div id="lbll1"><label for="chinese"></label><input type="checkbox" name="food-type" id="chinese"
+                        value="chinese" />
+                    Chinese</label></div>
+                <div id="lbll1"><label for="european"></label><input type="checkbox" name="food-type" id="european"
+                        value="european" />
+                    European</label></div>
+            </div>
+            <div id="addr"><label for="address">Address:
+                    <textarea placeholder="Your Address..." id="address" name="address" rows="3" cols="50"
+                        required></textarea></label></div>
+            <div id="coll">
+                <div id="sett"><label for="state">State:
+                        <input id="state" type="text" name="state" required /></label></div>
+                <div id="sett"><label for="country">Country:
+                        <input id="country" type="text" name="country" required /></label></div>
+                <div id="sett"><label for="pincode">Pincode:
+                        <input id="pincode" type="number" name="pincode" required /></label></div>
+            </div>
+            <button form="data-form" type="submit" id="subbtn">Submit</button>
+        </form>
+    </div>
+    <div id="tbl">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Choice of Food</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>Pincode</th>
+                </tr>
+            </thead>
+            <tbody id="trcon"></tbody>
+        </table>
+    </div>
+    <script type="module" src="script.js"></script>
+    <!--<script src="tabscript.js" ></script>-->
+    <!--<script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>-->
+</body>
+
+</html>
