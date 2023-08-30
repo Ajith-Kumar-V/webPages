@@ -1,0 +1,124 @@
+body{
+    background: linear-gradient(240deg,rgba(105, 180, 20, 0.432),rgba(40, 200, 160, 0.5),rgba(40, 141, 200, 0.678)) no-repeat fixed;
+    background-size: cover;
+    /*height: 100%;
+    margin: 0;*/
+ /*   background-attachment: fixed;*/
+}
+#content{
+    width: 70%;
+    height:500px;
+    font-size: 20px;
+    margin:0 auto;
+    padding:40px;
+    background:linear-gradient(280deg, rgba(135, 47, 235, 0.274), rgba(141, 182, 27, 0.377), rgba(226, 168, 42, 0.315)) no-repeat fixed;
+    border:1px solid rgba(12, 44, 226, 0.678);
+    border-radius: 20px;
+    box-sizing:border-box;
+    text-shadow: 0.5px 0.5px rgba(253, 253, 253, 0.85);
+}
+#tbl{
+    background-color: rgba(204, 190, 190, 0.568);
+    border: 2px solid black;
+    border-radius: 5px;
+    width:90%;
+    margin:20px auto;
+    color: black;
+}
+table,th,tr,td{
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+th,td{
+    padding: 5px;
+    width:200px;
+}
+#name{
+    display: flex;
+    flex-direction: row;
+    gap: 25%;
+}
+h1{
+    color:rgb(41, 20, 20);
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+#fname,#lname{
+    display: block;
+    margin:3px 0 0 5px;
+    padding:0 0 0 5px;
+    width: 170%;
+    height:25px;
+    border-radius:5px ;
+}
+p{
+    margin:5px 0;
+}
+#gender-field{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    margin: 0 0 0 25px;
+    padding: 0;
+}
+#food-field{
+    display: flex;
+    padding: 0 0 0 15px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+input[type="radio"],input[type="checkbox"]{
+    width:1.2em;
+    height:1.2em;
+}
+#lbll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addr label{
+    display: flex;
+    margin:10px 0;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#addr textarea{
+    width: 85%;
+    margin:3px 0 0 10px;
+    padding:10px 20px;
+    height:40px;
+    border-radius:5px ;
+    box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.8);
+}
+#sett input{
+    display: block;
+    margin:3px 0 0 5px;
+    padding:0 0 0 5px;
+    width: 130%;
+    height:25px;
+    border-radius:5px ;
+}
+#coll{
+    display: flex;
+    flex-direction: row;
+    gap:13%;
+}
+button{
+    display: block;
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    margin:15px auto;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(231, 236, 236, 0.9);
+}
+button:hover{
+    box-shadow: 3px 3px 3px black;
+    color:white;
+    background-color: rgba(12, 12, 12, 0.8);
+}
