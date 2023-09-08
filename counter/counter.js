@@ -6,6 +6,7 @@ function increment(){
 }
 function resetter(){
 	document.getElementById("dispp").innerHTML=0;
+	incc=0;
 }
 function decrement(){
 	incc --;
