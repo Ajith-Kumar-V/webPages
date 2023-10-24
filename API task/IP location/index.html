@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Geo location</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="This API will display the web user IP location" />
+        <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTpvFE5jcVN9xcTDiYErDCkt2gtYV7925xRA&usqp=CAU">
+        <style>
+            body::before{
+                content: '';
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9d0Jh-9rtdpcM_2V_GFgjSZfil47F7ovNqA&usqp=CAU");
+                background-size: cover;
+                position:absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                opacity: .3;
+            }
+            table,td,tr{
+                font-weight: 700;
+                border: 2px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            table{
+                width: 70%;
+                height: 30em;
+                margin: auto;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
+            a{
+                color: red;
+            }
+            </style>
+    </head>
+    <body>
+        <div id="page">
+            <table id="ip_data"></table>
+        </div>
+        <script>
+            let table=document.getElementById("ip_data");
+            function displayer(link){
+                console.log(link);
+                table.innerHTML=`
+                    <tr>
+                        <td>IP address</td><td>${link.query}</td>
+                    </tr>
+                    <tr>
+                        <td>City</td><td>${link.city}</td>
+                    </tr>
+                    <tr>
+                        <td>State</td><td>${link.regionName}</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td><td>${link.country}</td>
+                    </tr>
+                    <tr>
+                        <td>Internet Service Provider</td><td>${link.isp}</td>
+                    </tr>
+                    <tr>
+                        <td>Internet Access Poinr</td><td>${link.as}</td>
+                    </tr>
+                    <tr>
+                        <td>Time Zone</td><td>${link.timezone}</td>
+                    </tr>
+                    <tr>
+                        <td>Postal code</td><td>${link.zip}</td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td><td>${link.lat}</td>
+                    </tr>
+                    <tr>
+                        <td>Longitude</td><td>${link.lon}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><a href="https://www.google.com/maps/@${link.lat},${link.lon},15z?entry=ttu" target="_blank">Locate Me</a></td>
+                `
+            }
+            async function fetcher(){
+                await fetch("http://ip-api.com/json/").then(data=>data.json()).then(data=>displayer(data));
+            }
+            fetcher();
+        </script>
+    </body>
+</html>
