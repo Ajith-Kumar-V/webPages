@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Anime API</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="This API will display a new Anime once the page reloads" />
+        <style>
+            img{
+                opacity: 1;
+                width:30%; 
+                height:30em;
+                border-radius:5%;
+                border: 2px solid black;
+                margin:0 auto 0 auto;
+                display: block;
+                align-items: center;
+            }
+            h2,h4,h5{
+                text-align: center;
+            }
+            </style>
+    </head>
+    <body>
+        <div id="page">
+            <div id="main">
+                <div id="content"></div>
+            </div>
+        </div>
+        <script>
+            let box=document.getElementById("content");
+            let page=document.getElementById("main")
+            function displayer(link){
+                console.log(link.results[0].artist_href);
+                console.log(link.results[0].artist_name);
+                console.log(link.results[0].source_url);
+                box.innerHTML=`<img src="${link.results[0].url}" alt="anime pictures" title="Anime pictures" />`;
+                box.innerHTML+=`<h2>Artist Name : ${link.results[0].artist_name}</h2>`
+                box.innerHTML+=`<h4>Artist info : <a href="${link.results[0].artist_href}" target="_blank">Visit Bio</a></h4>`
+                box.innerHTML+=`<h5>Page Source : <a href="${link.results[0].source_url}" target="_blank">Click Here</a></h5>`
+            }
+            async function fetcher(){
+                await fetch("https://nekos.best/api/v2/neko").then(data=>data.json()).then(data=>displayer(data));
+            }
+            fetcher();
+        </script>
+    </body>
+</html>
