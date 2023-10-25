@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Emoji API</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="This Web page displays the emoji and its details randomly"/>
+        <style>
+            h2,h4{
+                text-align: center;
+            }
+            #emoji_holder{
+                margin: 60px;
+                display: flex;
+                justify-content: space-evenly;
+                font-size: 60px;
+            }
+        </style>
+      </head>
+      <body>
+        <div id="content"></div>
+        <div id="emoji_holder"></div>
+        <script>
+            let page=document.getElementById("content");
+            let emoj=document.getElementById("emoji_holder");
+            function dispp(val){
+                console.log(val);
+                page.innerHTML+=`
+                    <h2>Emoji name: ${val.name}</h2>
+                    <h4>Category: ${val.category}</h4>
+                    <h4>Emoji group: ${val.group}</h4>
+                `
+                let htm=val.htmlCode
+                for(let i=0;i<htm.length;i++){
+                    console.log(htm[i])
+                    emoj.innerHTML+=`
+                        <div id="emoji">${htm[i]}</div>
+                    `
+                }
+            }
+            async function fetcher(){
+                await fetch("https://emojihub.yurace.pro/api/random").then(val=>val.json()).then(val=>dispp(val));
+            }
+            fetcher();
+        </script>
+      </body>
+</html>
